@@ -1,0 +1,17 @@
+### Créer une salle sur la version en couches
+POST http://localhost:8081/api/rooms
+Content-Type: application/json
+
+{"name":"Ada","capacity":12}
+
+### Remplacer ROOM_ID puis créer une réservation
+POST http://localhost:8081/api/reservations
+Content-Type: application/json
+
+{
+  "roomId":"ROOM_ID",
+  "organizerEmail":"ada@example.com",
+  "participants":8,
+  "startsAt":"2030-01-15T09:00:00",
+  "endsAt":"2030-01-15T11:00:00"
+}

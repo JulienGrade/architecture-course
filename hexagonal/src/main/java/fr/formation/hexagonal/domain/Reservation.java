@@ -1,0 +1,3 @@
+package fr.formation.hexagonal.domain;
+import java.time.LocalDateTime; import java.util.UUID;
+public record Reservation(UUID id,UUID roomId,String organizerEmail,int participants,LocalDateTime startsAt,LocalDateTime endsAt,Status status) { public Reservation {if(id==null||roomId==null||organizerEmail==null||organizerEmail.isBlank()||participants<1||startsAt==null||endsAt==null||!startsAt.isBefore(endsAt))throw new BusinessRuleViolation("Invalid reservation");} public Reservation cancel(){return new Reservation(id,roomId,organizerEmail,participants,startsAt,endsAt,Status.CANCELLED);} public enum Status{CONFIRMED,CANCELLED} }

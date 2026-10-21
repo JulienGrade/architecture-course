@@ -1,0 +1,3 @@
+package fr.formation.hexagonal;
+import fr.formation.hexagonal.application.port.out.*; import fr.formation.hexagonal.application.service.*; import org.springframework.boot.*; import org.springframework.boot.autoconfigure.SpringBootApplication; import org.springframework.context.annotation.Bean;
+@SpringBootApplication public class HexagonalApplication { public static void main(String[] args){SpringApplication.run(HexagonalApplication.class,args);} @Bean ReservationService reservationService(RoomPort rooms,ReservationPort reservations,NotificationPort notifications){return new ReservationService(rooms,reservations,notifications);} @Bean RoomService roomService(RoomPort rooms){return new RoomService(rooms);} }

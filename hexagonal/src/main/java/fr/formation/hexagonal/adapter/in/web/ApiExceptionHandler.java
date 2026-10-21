@@ -1,0 +1,3 @@
+package fr.formation.hexagonal.adapter.in.web;
+import fr.formation.hexagonal.application.service.ResourceNotFound; import fr.formation.hexagonal.domain.BusinessRuleViolation; import java.util.Map; import org.springframework.http.*; import org.springframework.web.bind.annotation.*;
+@RestControllerAdvice class ApiExceptionHandler { @ExceptionHandler(BusinessRuleViolation.class) ResponseEntity<Map<String,String>> business(BusinessRuleViolation e){return ResponseEntity.unprocessableEntity().body(Map.of("message",e.getMessage()));} @ExceptionHandler(ResourceNotFound.class) ResponseEntity<Map<String,String>> missing(ResourceNotFound e){return ResponseEntity.status(404).body(Map.of("message",e.getMessage()));} }

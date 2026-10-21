@@ -1,0 +1,3 @@
+package fr.formation.clean.interfaceadapter.controller;
+import fr.formation.clean.application.boundary.ManageRoomInputBoundary;import fr.formation.clean.domain.entity.Room;import java.util.*;import org.springframework.http.HttpStatus;import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/rooms")class RoomController{private final ManageRoomInputBoundary rooms;RoomController(ManageRoomInputBoundary rooms){this.rooms=rooms;}@PostMapping @ResponseStatus(HttpStatus.CREATED)Room create(@RequestBody Request r){return rooms.create(r.name(),r.capacity());}@GetMapping List<Room>list(){return rooms.list();}record Request(String name,int capacity){}}

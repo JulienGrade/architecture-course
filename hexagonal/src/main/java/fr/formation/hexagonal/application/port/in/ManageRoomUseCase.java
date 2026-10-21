@@ -1,0 +1,1 @@
+package fr.formation.hexagonal.application.port.in;import fr.formation.hexagonal.domain.Room;import java.util.List;public interface ManageRoomUseCase{Room create(String name,int capacity);List<Room>list();}

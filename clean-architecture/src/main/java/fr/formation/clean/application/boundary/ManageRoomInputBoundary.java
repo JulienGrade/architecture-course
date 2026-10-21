@@ -1,0 +1,1 @@
+package fr.formation.clean.application.boundary;import fr.formation.clean.domain.entity.Room;import java.util.List;public interface ManageRoomInputBoundary{Room create(String name,int capacity);List<Room>list();}

@@ -1,0 +1,1 @@
+package fr.formation.clean.application.boundary;import fr.formation.clean.domain.entity.Room;import java.util.*;public interface RoomGateway{Room save(Room room);Optional<Room> findById(UUID id);List<Room> findAll();}

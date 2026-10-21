@@ -1,0 +1,2 @@
+package fr.formation.clean.application.boundary;
+import java.time.LocalDateTime;import java.util.UUID;public interface CreateReservationInputBoundary{Output execute(Input input);record Input(UUID roomId,String organizerEmail,int participants,LocalDateTime startsAt,LocalDateTime endsAt){}record Output(UUID id,UUID roomId,String organizerEmail,int participants,LocalDateTime startsAt,LocalDateTime endsAt,String status){}}

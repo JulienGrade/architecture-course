@@ -1,0 +1,9 @@
+server.port: 8084
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/reservations?currentSchema=clean
+    username: reservations
+    password: reservations
+  jpa:
+    hibernate.ddl-auto: create-drop
+    properties.hibernate.hbm2ddl.create_namespaces: true
